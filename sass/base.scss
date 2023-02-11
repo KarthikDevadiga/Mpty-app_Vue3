@@ -1,5 +1,5 @@
 $color-primary: #009eff;
-$color-primary-dark: #0014ff;
+$color-primary-dark: #044a94;
 $color-primary-light: #bfeaf5;
 
 $color-secondary: #101d2c;
@@ -50,6 +50,9 @@ body {
 .header {
   // background-color: aquamarine;
   height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .navigation {
@@ -63,6 +66,76 @@ body {
     color: $color-grey-dark-1;
     margin-bottom: -0.5rem;
     font-weight: 800;
+  }
+}
+
+.invite {
+  &__button {
+    border: none;
+    background-color: $color-primary-dark;
+    color: $color-grey-light-1;
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+    padding: 0.55rem 1rem;
+    border-radius: 6px;
+    // justify-content: space-evenly;
+  }
+  &__user-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: $color-grey-light-1;
+    margin-right: 0.2rem;
+  }
+}
+
+.search {
+  // background-color: orangered;
+  display: flex;
+  padding: 0.8rem;
+  // flex: 1 1 0%;
+  // flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var($color-grey-light-1);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all 0.2s;
+    margin-right: -5rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var($color-grey-light-2);
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+      background-color: var($color-grey-light-2);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &__search-icon {
+    height: 1.7rem;
+    width: 1.7rem;
+    fill: $color-grey-dark-1;
+    margin-right: 0.2rem;
   }
 }
 
