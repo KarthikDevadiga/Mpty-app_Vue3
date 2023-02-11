@@ -1,0 +1,103 @@
+$color-primary: #009eff;
+$color-primary-dark: #0014ff;
+$color-primary-light: #bfeaf5;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #393e46;
+$color-grey-dark-2: #6d5d4b;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+//
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5%. By keepinig font-size as 62.5% 1rem will be equal to 10px.
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark-1;
+  font-weight: 600;
+  line-height: 1.6;
+  height: 100vh;
+  background-color: $color-grey-dark-1;
+}
+
+.container {
+  // max-width: 130rem;
+  max-width: 80vw;
+  margin: 12rem auto;
+  background-color: $color-grey-light-1;
+  min-height: 50rem; //testing
+  padding: 2rem;
+}
+
+.header {
+  // background-color: aquamarine;
+  height: 12rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  &__heading {
+    color: $color-grey-dark-1;
+    margin-bottom: -0.5rem;
+    font-weight: 800;
+  }
+}
+
+.main-content {
+  background-color: yellow;
+  // min-height: 45rem;
+}
+
+.pagination {
+  background-color: green;
+}
+
+// .container {
+//   display: grid;
+//   grid-template-rows: 2fr minmax(min-content, 14rem) 2fr;
+//   grid-template-columns:
+//     [full-start]
+//     minmax(4rem, 1fr) [center-start]
+//     repeat(8, [coloumn-start] minmax(min-content, 14rem) [coloumn-end])
+//     [center-end] minmax(4rem, 1fr) [full-end];
+// }
+/*
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 10vh min-content 10vh;
+  grid-template-columns:
+    [full-start]
+    minmax(4rem, 1fr) [center-start]
+    repeat(8, [column-start] minmax(min-content, 14rem) [column-end])
+    [center-end] minmax(4rem, 1fr) [full-end];
+}
+.main-content {
+  grid-column: center-start/center-end;
+  grid-row: 2/3;
+  background-color: yellow;
+}
+*/
