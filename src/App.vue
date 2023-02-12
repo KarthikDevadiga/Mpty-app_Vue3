@@ -5,7 +5,12 @@
     <div class="main-content">
       <div class="user-list">
         <!-- dhdhd -->
-        <app-user v-for="user in users" :key="user" :user="user"></app-user>
+        <app-user
+          v-for="user in users"
+          :key="user"
+          :user="user"
+          @click.prevent="userSelected(user.id)"
+        ></app-user>
         <!-- ksksk -->
       </div>
     </div>
@@ -55,6 +60,10 @@ export default {
     ...mapActions(useModalStore, ['fetchAllUsers']),
     debug() {
       console.log(this.users);
+    },
+    userSelected(id) {
+      console.log('clicked');
+      console.log(id);
     },
   },
   mounted() {
