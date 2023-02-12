@@ -6,6 +6,8 @@ $color-secondary: #101d2c;
 
 $color-grey-light-1: #f9f7f6;
 $color-grey-light-2: #aaa;
+$color-grey-light-3: #cdeaea;
+$color-grey-light-4: #c8c3c0;
 
 $color-grey-dark-1: #393e46;
 $color-grey-dark-2: #6d5d4b;
@@ -36,16 +38,20 @@ body {
   font-weight: 600;
   line-height: 1.6;
   height: 100vh;
-  background-color: $color-grey-dark-1;
+  background-image: linear-gradient(to right, #f9f7f6, #cdeaea);
 }
 
 .container {
   // max-width: 130rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
   max-width: 60vw;
-  margin: 12rem auto;
+  margin: 10rem auto;
   background-color: $color-grey-light-1;
   min-height: 50rem; //testing
   padding: 3rem;
+  border-radius: 10px;
 }
 
 .header {
@@ -81,6 +87,10 @@ body {
     padding: 0.55rem 1rem;
     border-radius: 6px;
     // justify-content: space-evenly;
+
+    &:active {
+      transform: translateY(2px);
+    }
   }
   &__user-icon {
     height: 1.5rem;
@@ -116,12 +126,12 @@ body {
     &:focus {
       outline: none;
       width: 100%;
-      background-color: $color-grey-light-2;
+      background-color: $color-grey-light-4;
     }
   }
   //selecting adjacent element
   &__input:focus + &__button {
-    background-color: $color-grey-light-2;
+    background-color: $color-grey-light-4;
   }
 
   &__button {
@@ -140,8 +150,8 @@ body {
   }
 
   &__search-icon {
-    height: 1.7rem;
-    width: 1.7rem;
+    height: 2rem;
+    width: 2rem;
     fill: $color-grey-dark-1;
     // background-color: $color-grey-light-1;
     margin-right: 0.2rem;
@@ -153,9 +163,10 @@ body {
   // flex-flow: column;
   background-color: #fff;
   border-radius: 10px;
-  min-height: 30rem;
-  margin-top: 3rem;
+  height: 50rem;
+  margin: 3rem 0;
   padding: 2rem;
+  overflow: scroll; // scroll bheviour
 }
 
 .users {
@@ -163,7 +174,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   border-bottom: 0.1px solid $color-grey-light-2;
   flex-wrap: 1;
 
@@ -202,7 +213,16 @@ body {
 // }
 
 .pagination {
-  background-color: green;
+  // background-color: green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-icon {
+  height: 1.7rem;
+  width: 1.7rem;
+  fill: $color-grey-dark-1;
 }
 
 // .container {
