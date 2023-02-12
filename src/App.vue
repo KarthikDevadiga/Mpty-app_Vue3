@@ -4,105 +4,9 @@
     <app-header></app-header>
     <div class="main-content">
       <div class="user-list">
-        <div class="users">
-          <div class="users__details">
-            <div class="user-name">
-              <img
-                class="user-name__img"
-                src="https://panorbit.in/wp-content/uploads/2019/hotlink-ok/1001.jpeg"
-                alt="hehe"
-              />
-              <h3 class="user-name__name">Karthik</h3>
-            </div>
-            <div class="users-details__email">Sincere@april.biz</div>
-            <div class="users-details__city">Gwenborough</div>
-          </div>
-
-          <div class="status">Logo Acrtive</div>
-        </div>
         <!-- dhdhd -->
-        <div class="users">
-          <div class="users__details">
-            <div class="user-name">
-              <img
-                class="user-name__img"
-                src="https://panorbit.in/wp-content/uploads/2019/hotlink-ok/1001.jpeg"
-                alt="hehe"
-              />
-              <h3 class="user-name__name">Karthik</h3>
-            </div>
-            <div class="users-details__email">Sincere@april.biz</div>
-            <div class="users-details__city">Gwenborough</div>
-          </div>
-
-          <div class="status">Logo Acrtive</div>
-        </div>
-        <div class="users">
-          <div class="users__details">
-            <div class="user-name">
-              <img
-                class="user-name__img"
-                src="https://panorbit.in/wp-content/uploads/2019/hotlink-ok/1001.jpeg"
-                alt="hehe"
-              />
-              <h3 class="user-name__name">Karthik</h3>
-            </div>
-            <div class="users-details__email">Sincere@april.biz</div>
-            <div class="users-details__city">Gwenborough</div>
-          </div>
-
-          <div class="status">Logo Acrtive</div>
-        </div>
-        <div class="users">
-          <div class="users__details">
-            <div class="user-name">
-              <img
-                class="user-name__img"
-                src="https://panorbit.in/wp-content/uploads/2019/hotlink-ok/1001.jpeg"
-                alt="hehe"
-              />
-              <h3 class="user-name__name">Karthik</h3>
-            </div>
-            <div class="users-details__email">Sincere@april.biz</div>
-            <div class="users-details__city">Gwenborough</div>
-          </div>
-
-          <div class="status">Logo Acrtive</div>
-        </div>
-        <div class="users">
-          <div class="users__details">
-            <div class="user-name">
-              <img
-                class="user-name__img"
-                src="https://panorbit.in/wp-content/uploads/2019/hotlink-ok/1001.jpeg"
-                alt="hehe"
-              />
-              <h3 class="user-name__name">Karthik</h3>
-            </div>
-            <div class="users-details__email">Sincere@april.biz</div>
-            <div class="users-details__city">Gwenborough</div>
-          </div>
-
-          <div class="status">Logo Acrtive</div>
-        </div>
-
+        <app-user v-for="user in users" :key="user" :user="user"></app-user>
         <!-- ksksk -->
-        <div class="users">
-          <div class="users__details">
-            <div class="user-name">
-              <img
-                class="user-name__img"
-                src="https://panorbit.in/wp-content/uploads/2019/hotlink-ok/1001.jpeg"
-                alt="hehe"
-              />
-              <h3 class="user-name__name">Karthik</h3>
-            </div>
-            <div class="users-details__email">Sincere@april.biz</div>
-            <div class="users-details__city">Gwenborough</div>
-          </div>
-
-          <div class="status">Logo Acrtive</div>
-        </div>
       </div>
     </div>
     <div class="pagination">
@@ -121,10 +25,13 @@
       </div>
     </div>
   </div>
+  <!-- <div v-for="us"></div> -->
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue';
+import AppUser from './components/AppUser.vue';
+
 import { mapState, mapActions } from 'pinia';
 import useModalStore from './stores/modal';
 // import { onMounted } from 'vue';
@@ -139,6 +46,7 @@ export default {
 
   components: {
     AppHeader,
+    AppUser,
   },
   computed: {
     ...mapState(useModalStore, ['users']),
