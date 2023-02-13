@@ -53,15 +53,15 @@ export default {
   },
   computed: {
     ...mapState(useModalStore, ['users']),
-    ...mapWritableState(useModalStore, ['current_use']),
+    ...mapWritableState(useModalStore, ['current_user']),
 
     // ...mapStores(useModalStore),
   },
   methods: {
-    ...mapActions(useModalStore, ['changeCurrentUser']),
+    // ...mapActions(useModalStore, ['changeCurrentUser']),
     userSelected(id) {
-      this.userSelected = id;
-      console.log(this.userSelected);
+      this.current_user = id;
+      console.log(this.current_user);
       router.push('/user');
     },
   },
