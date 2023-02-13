@@ -1,16 +1,25 @@
 <template>
   <div class="container">
+    <!-- <router-view :to="{ name: 'user' }"></router-view> -->
+    <router-view></router-view>
+
     <!-- component for header -->
     <app-header></app-header>
     <div class="main-content">
       <div class="user-list">
         <!-- dhdhd -->
+
+        <!-- <router-link ></router-link> -->
         <app-user
           v-for="user in users"
           :key="user"
           :user="user"
           @click.prevent="userSelected(user.id)"
         ></app-user>
+        <!-- <router-link :to="{ name: 'user' }">
+          
+        </router-link> -->
+
         <!-- ksksk -->
       </div>
     </div>
@@ -36,6 +45,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppUser from './components/AppUser.vue';
+import router from './router/indexRouter';
 
 import { mapState, mapActions } from 'pinia';
 import useModalStore from './stores/modal';
@@ -62,8 +72,7 @@ export default {
       console.log(this.users);
     },
     userSelected(id) {
-      console.log('clicked');
-      console.log(id);
+      router.push('/user');
     },
   },
   mounted() {
