@@ -1,10 +1,9 @@
 <template>
-  <div class="container">
-    <!-- <router-view :to="{ name: 'user' }"></router-view> -->
-    <router-view></router-view>
+  <!-- <router-view :to="{ name: 'user' }"></router-view> -->
+  <router-view></router-view>
 
-    <!-- component for header -->
-  </div>
+  <!-- component for header -->
+
   <!-- <div v-for="us"></div> -->
 </template>
 
