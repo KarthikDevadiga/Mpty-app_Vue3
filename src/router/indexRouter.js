@@ -1,7 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import AppUserD from '../components/AppUserD.vue';
+import LandingPage from '../views/AppLandingPage.vue';
 
 const routes = [
+  {
+    name: 'landing',
+    path: '/',
+    component: LandingPage,
+  },
   {
     name: 'user',
     path: '/user',
