@@ -40,7 +40,7 @@
 <script>
 import AppHeader from '../components/AppHeader.vue';
 import AppUser from '../components/AppUser.vue';
-import { mapState, mapActions } from 'pinia';
+import { mapState, mapActions, mapWritableState } from 'pinia';
 import useModalStore from '../stores/modal';
 import router from '../router/indexRouter';
 
@@ -53,9 +53,15 @@ export default {
   },
   computed: {
     ...mapState(useModalStore, ['users']),
+    ...mapWritableState(useModalStore, ['current_use']),
+
+    // ...mapStores(useModalStore),
   },
   methods: {
+    ...mapActions(useModalStore, ['changeCurrentUser']),
     userSelected(id) {
+      this.userSelected = id;
+      console.log(this.userSelected);
       router.push('/user');
     },
   },

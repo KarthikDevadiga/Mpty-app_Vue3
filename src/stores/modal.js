@@ -5,6 +5,7 @@ export default defineStore('modal', {
   state: () => ({
     boolean: 'false',
     users: [],
+    current_user: 1,
   }),
   actions: {
     async fetchAllUsers(state) {
@@ -23,5 +24,8 @@ export default defineStore('modal', {
         console.log(error);
       }
     },
+    // changeCurrentUser({ commit }, payload) {
+    //   console.log(payload);
+    // },
   },
 });
