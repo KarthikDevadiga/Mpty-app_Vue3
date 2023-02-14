@@ -93,22 +93,40 @@
           </h3>
         </div>
       </div>
-      <div class="location__map">Location-MAP</div>
+      <div id="map"></div>
     </div>
 
-    <div class="chat">Chating</div>
+    <div v-show="!showChat" class="chat" @click="showChat = !showChat">
+      <div class="chat__chating-div">Lo chat</div>
+      <div class="chat__icon-u">LO</div>
+    </div>
+
+    <div
+      v-show="showChat"
+      class="chat-window"
+      :class="{ growing: showChat, shrinking: !showChat }"
+    >
+      <div v-show="showChat" class="chat" @click="showChat = !showChat">
+        <div class="chat__chating-div">Lo chat</div>
+        <div class="chat__icon-u">LO</div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'pinia';
 import useModalStore from '../stores/modal';
-
+// import { LMap, LTileLayer, LMarker } from 'vue3-leaflet';
+// import L from 'leaflet';
+// import L from 'vue2-leaflet';
 export default {
   name: 'LandingPage',
   data() {
     return {
       user: {},
+      showChat: false,
+      // isActive: !showChat,
     };
   },
   computed: {
@@ -124,6 +142,22 @@ export default {
     // console.log(this.f);
     this.user = this.fetchAllDetails();
     console.log(this.user);
+  },
+  mounted() {
+    const lat = this.user.address.geo.lat;
+    const lng = this.user.address.geo.lat;
+
+    const map = L.map('map').setView([lat, lng], 7); // map is the id here
+    console.log(L);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    L.marker([lat, lng])
+      .addTo(map)
+      .bindPopup('Guess logitude and latitude are randoms')
+      .openPopup();
   },
 };
 </script>
