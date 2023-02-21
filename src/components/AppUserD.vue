@@ -104,7 +104,7 @@
     <div
       v-show="showChat"
       class="chat-window"
-      :class="{ growing: showChat, shrinking: !showChat }"
+      :class="{ growing: isAnimation, shrinking:isAnimation }"
     >
       <div v-show="showChat" class="chat" @click="showChat = !showChat">
         <div class="chat__chating-div">Lo chat</div>
@@ -126,7 +126,7 @@ export default {
     return {
       user: {},
       showChat: false,
-      // isActive: !showChat,
+      isAnimation: false,
     };
   },
   computed: {
