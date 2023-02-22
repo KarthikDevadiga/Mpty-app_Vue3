@@ -1,4 +1,7 @@
 .container-2 {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
   position: relative;
   margin: 3rem;
   // width: 90%;
@@ -13,7 +16,9 @@
 }
 
 .sidebar {
-  background-color: yellow;
+  background-image:linear-gradient(to right, #76c2f2, #398fea);
+  // background-image:linear-gradient(to right, #ffffff, #abaeb1);
+
   grid-column: sidebar-start/col-start 2;
   grid-row: 1/-1;
 

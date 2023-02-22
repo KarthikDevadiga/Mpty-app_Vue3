@@ -85,5 +85,21 @@
 <script>
 export default {
   props: ['user'],
+  mounted() {
+    const lat = this.user.address.geo.lat;
+    const lng = this.user.address.geo.lat;
+
+    const map = L.map('map').setView([lat, lng], 7); // map is the id here
+    console.log(L);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    L.marker([lat, lng])
+      .addTo(map)
+      .bindPopup('Guess logitude and latitude are randoms')
+      .openPopup();
+  },
 };
 </script>
