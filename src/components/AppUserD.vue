@@ -2,12 +2,12 @@
   <div class="container-2">
     <div class="sidebar">
       <div class="nav-link">
-        <router-link :to="{ name: 'userDetail' }" class="nav-link__link"
+        <!-- <router-link :to="{ name: 'userDetail' }" class="nav-link__link"
           >Profile</router-link
         >
         <a href="#" class="nav-link__link">Profile</a>
         <a href="#" class="nav-link__link">Profile</a>
-        <a href="#" class="nav-link__link">Profile</a>
+        <a href="#" class="nav-link__link">Profile</a> -->
 
         <a
           href="#"
