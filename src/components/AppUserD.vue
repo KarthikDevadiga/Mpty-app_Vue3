@@ -2,12 +2,15 @@
   <div class="container-2">
     <div class="sidebar">
       <div class="nav-link">
-        <a href="#" class="nav-link__link">Profile</a>
+        <router-link :to="{ name: 'userDetail' }" class="nav-link__link"
+          >Profile</router-link
+        >
         <a href="#" class="nav-link__link">Profile</a>
         <a href="#" class="nav-link__link">Profile</a>
         <a href="#" class="nav-link__link">Profile</a>
       </div>
     </div>
+    <router-view name="userInfo"></router-view>
     <div class="profile-name">
       <h3 class="sub-h">Profile</h3>
       <div class="profile">

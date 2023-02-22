@@ -1,6 +1,6 @@
 <template>
   <!-- <router-view :to="{ name: 'user' }"></router-view> -->
-  <router-view></router-view>
+  <router-view name="main"></router-view>
 
   <!-- component for header -->
 
